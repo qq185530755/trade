@@ -1,0 +1,41 @@
+条件筛选：
+(>) 大于 - $gt
+(<) 小于 - $lt
+(>=) 大于等于 - $gte
+(<= ) 小于等于 - $lte
+
+tradeday_col.find({'date':{'$lt': tradeday}}, sort=[('date', -1)], limit=6, projection={'date': True, '_id':False})
+tradeday_col.find({'date':{'$in': ['20150105', '20150106'}})
+
+now = datetime.now().strftime('%Y-%m-%d-%H-%M-%S')  年月日时分秒  type: str
+
+df[df.pe>0].sort_values(by='pe').head(150)  #  pandas dateframe数据接口， 先筛选pe>0 然后根据pe排查数据。获取PE最小的前150只票
+
+首先完成stocks代码注释，然后把用的 方法填在这里
+
+
+
+
+
+代码合入：
+git clone ...
+git status
+git add ..
+git commit -m ''
+git review
+合入后修改代码
+git review -d 7418001
+git branch -v 查看分支
+git status
+git add 
+git commit --amend
+git review 分支号（master不写）-R
+
+git reset --soft HEAD^  撤销上一次提交，修改的文件内容还保存着
+git reset --hard HEAD^  撤销上一次提交，连同修改的文件内容一起撤销
+
+在master分支提交代码 发生冲突，查找冲突的文件
+1.先用 git review -d ... 拉取已提交并且冲突的代码
+2.使用 git pull -r，
+3.git branch --set-upstream-to=<remote>/<branch> review/_10257837/8255608  基于某个分支，拉最近的代码
+4.git pull -r 拉取
