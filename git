@@ -1,0 +1,21 @@
+git clone ...
+git status
+git add ..
+git commit -m ''
+git review
+合入后修改代码
+git review -d 7418001
+git branch -v 查看分支
+git status
+git add 
+git commit --amend
+git review 分支号（master不写）-R
+
+git reset --soft HEAD^  撤销上一次提交，修改的文件内容还保存着
+git reset --hard HEAD^  撤销上一次提交，连同修改的文件内容一起撤销
+
+在master分支提交代码 发生冲突，查找冲突的文件
+1.先用 git review -d ... 拉取已提交并且冲突的代码
+2.使用 git pull -r，
+3.git branch --set-upstream-to=<remote>/<branch> review/_10257837/8255608  基于某个分支，拉最近的代码
+4.git pull -r 拉取
